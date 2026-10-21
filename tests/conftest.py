@@ -26,7 +26,6 @@ def driver(request):
     browser.set_page_load_timeout(45)
     request.node.browser = browser
     try:
-        browser.get(os.getenv('BASE_URL', 'https://www.saucedemo.com/'))
         yield browser
     finally:
         browser.quit()
