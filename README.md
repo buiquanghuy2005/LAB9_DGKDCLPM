@@ -118,9 +118,6 @@ Mặc định Chrome chạy headless. Báo cáo: `reports/report.html`, `reports
 | TC07 | Thêm phần tử | Passed |
 | TC08 | Xóa phần tử | Passed |
 
-- [Lần chạy kiểm chứng](https://github.com/buiquanghuy2005/LAB9_DGKDCLPM/actions/runs/39536809747).
-- Báo cáo trong repo: [HTML](reports/report.html), [JUnit XML](reports/results.xml), [thông tin lần chạy](reports/EXECUTION.md). Tải HTML về để mở.
-- 8 ảnh dưới đây lấy nguyên bản từ artifact của cùng lần chạy. Ảnh thể hiện trạng thái cuối; assertion trong XML xác nhận cả các bước trung gian.
 
 ### 7.1. Ảnh minh chứng
 
@@ -157,12 +154,6 @@ Mặc định Chrome chạy headless. Báo cáo: `reports/report.html`, `reports
 ![Minh chứng TC08](evidence/test_TC08_remove_elements-passed.png)
 
 
-
-## 8. GitHub Actions và nộp bài
-
-Workflow `.github/workflows/selenium.yml` tự chạy khi push hoặc tạo pull request; có thể chạy thủ công bằng Run workflow. GitHub cài Chrome và thư viện, thực thi pytest rồi lưu artifact `selenium-results` gồm báo cáo và ảnh kể cả khi test thất bại.
-
-Nộp link repository tại nơi giao bài và GSheet của lớp sau khi kiểm tra README và kết quả chạy.
 
 ## 9. Nhận xét
 
