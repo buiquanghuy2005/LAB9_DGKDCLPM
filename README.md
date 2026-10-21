@@ -105,7 +105,58 @@ Mặc định Chrome chạy headless. Báo cáo: `reports/report.html`, `reports
 
 ## 7. Kết quả và minh chứng
 
-Đang chờ lần chạy GitHub Actions cho website The Internet. Chưa ghi nhận Passed/Failed cho bộ test mới. Báo cáo và ảnh của website cũ đã được gỡ khỏi phiên bản hiện tại để tránh nhầm lẫn; các commit cũ vẫn giữ lịch sử.
+Đã chạy thực tế ngày **21/10/2026** trên GitHub Actions: **8/8 Passed trong 19,69 giây**. Môi trường: Ubuntu 24.04, Python 3.12.15, Selenium 4.51.0, pytest 9.1.1.
+
+| Mã | Nội dung | Kết quả |
+|---|---|---|
+| TC01 | Đăng nhập hợp lệ | Passed |
+| TC02 | Sai mật khẩu | Passed |
+| TC03 | Sai username | Passed |
+| TC04 | Đăng xuất | Passed |
+| TC05 | Checkbox | Passed |
+| TC06 | Dropdown | Passed |
+| TC07 | Thêm phần tử | Passed |
+| TC08 | Xóa phần tử | Passed |
+
+- [Lần chạy kiểm chứng](https://github.com/buiquanghuy2005/LAB9_DGKDCLPM/actions/runs/39536809747).
+- Báo cáo trong repo: [HTML](reports/report.html), [JUnit XML](reports/results.xml), [thông tin lần chạy](reports/EXECUTION.md). Tải HTML về để mở.
+- 8 ảnh dưới đây lấy nguyên bản từ artifact của cùng lần chạy. Ảnh thể hiện trạng thái cuối; assertion trong XML xác nhận cả các bước trung gian.
+
+### 7.1. Ảnh minh chứng
+
+**TC01 – Đăng nhập hợp lệ: Passed.** Secure Area và thông báo đăng nhập thành công.
+
+![Minh chứng TC01](evidence/test_TC01_login_valid-passed.png)
+
+**TC02 – Sai mật khẩu: Passed.** Thông báo Your password is invalid!.
+
+![Minh chứng TC02](evidence/test_TC02_login_wrong_password-passed.png)
+
+**TC03 – Sai username: Passed.** Thông báo Your username is invalid!.
+
+![Minh chứng TC03](evidence/test_TC03_login_wrong_username-passed.png)
+
+**TC04 – Đăng xuất: Passed.** Về Login Page với thông báo đăng xuất thành công.
+
+![Minh chứng TC04](evidence/test_TC04_logout-passed.png)
+
+**TC05 – Checkbox: Passed.** Checkbox 1 đã chọn, checkbox 2 đã bỏ chọn.
+
+![Minh chứng TC05](evidence/test_TC05_checkboxes-passed.png)
+
+**TC06 – Dropdown: Passed.** Lựa chọn cuối cùng là Option 2.
+
+![Minh chứng TC06](evidence/test_TC06_dropdown-passed.png)
+
+**TC07 – Thêm phần tử: Passed.** Có 3 nút Delete sau 3 lần thêm.
+
+![Minh chứng TC07](evidence/test_TC07_add_elements-passed.png)
+
+**TC08 – Xóa phần tử: Passed.** Không còn nút Delete sau khi xóa hết.
+
+![Minh chứng TC08](evidence/test_TC08_remove_elements-passed.png)
+
+
 
 ## 8. GitHub Actions và nộp bài
 
