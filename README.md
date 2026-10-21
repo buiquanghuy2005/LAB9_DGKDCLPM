@@ -47,7 +47,7 @@ Nội dung cần nắm: khởi tạo WebDriver, tìm phần tử, nhập dữ li
 ## 5. Cấu trúc mã nguồn
 
 ```text
-selenium-saucedemo/
+LAB9_DGKDCLPM/
 ├── .github/workflows/selenium.yml
 ├── tests/
 │   ├── conftest.py
@@ -96,7 +96,25 @@ Mở `reports/report.html` sau khi chạy. `reports/results.xml` chứa kết qu
 
 ## 7. Kết quả thực nghiệm
 
-Xem `reports/EXECUTION.md` để biết trạng thái chạy thực tế và giới hạn môi trường. Không suy ra Passed chỉ từ việc thu thập được test. Lỗi khởi tạo trình duyệt hoặc kết nối được phân biệt với lỗi chức năng website.
+Đã chạy thực tế trên GitHub Actions ngày **21/10/2026**, Ubuntu 24.04, Python 3.12.15, Selenium 4.51.0. Kết quả: **6 Passed, 2 Failed trong 43.18 giây**.
+
+| Test | Kết quả |
+|---|---|
+| TC01 – Đăng nhập hợp lệ | Passed |
+| TC02 – Sai mật khẩu | Passed |
+| TC03 – Tài khoản bị khóa | Passed |
+| TC04 – Bỏ trống username | Passed |
+| TC05 – Thêm vào giỏ | Passed |
+| TC06 – Xóa khỏi giỏ | Failed: chờ giỏ trống và badge biến mất quá 15 giây |
+| TC07 – Sắp xếp giá tăng | Passed |
+| TC08 – Đăng xuất | Failed: sau khi nhấn Logout, không tìm thấy nút đăng nhập trong 15 giây |
+
+Hai lỗi trên chưa được xác định nguyên nhân gốc; không kết luận ngay là lỗi website vì cần đối chiếu ảnh, trạng thái trang và thao tác Selenium.
+
+- [Lần chạy có kết quả kiểm chứng](https://github.com/buiquanghuy2005/LAB9_DGKDCLPM/actions/runs/39535739313).
+- [Tải báo cáo HTML/XML và 8 ảnh minh chứng](https://github.com/buiquanghuy2005/LAB9_DGKDCLPM/actions/runs/39535739313/artifacts/12317715018) (GitHub có thể yêu cầu đăng nhập; artifact có thời hạn lưu).
+- Các báo cáo HTML/XML đang lưu trong thư mục `reports/` của mã nguồn là **lần chạy cục bộ trước đó**, bị chặn Chrome (8 setup errors); xem `reports/EXECUTION.md`. Không nhầm chúng với kết quả CI ở trên.
+
 
 ## 8. Chạy trên GitHub Actions
 
