@@ -113,8 +113,44 @@ Hai lỗi trên chưa được xác định nguyên nhân gốc; không kết lu
 
 - [Lần chạy có kết quả kiểm chứng](https://github.com/buiquanghuy2005/LAB9_DGKDCLPM/actions/runs/39535739313).
 - [Tải báo cáo HTML/XML và 8 ảnh minh chứng](https://github.com/buiquanghuy2005/LAB9_DGKDCLPM/actions/runs/39535739313/artifacts/12317715018) (GitHub có thể yêu cầu đăng nhập; artifact có thời hạn lưu).
-- Các báo cáo HTML/XML đang lưu trong thư mục `reports/` của mã nguồn là **lần chạy cục bộ trước đó**, bị chặn Chrome (8 setup errors); xem `reports/EXECUTION.md`. Không nhầm chúng với kết quả CI ở trên.
+- Báo cáo CI được lưu trực tiếp trong repo: [HTML](reports/report.html), [JUnit XML](reports/results.xml), [thông tin lần chạy](reports/EXECUTION.md). Tải file HTML về và mở bằng trình duyệt để xem đầy đủ.
 
+
+### 7.1. Ảnh minh chứng từng test case
+
+Ảnh được chụp tự động cuối từng test trong lần chạy số 1, ngày 21/10/2026. Kết quả Passed/Failed được đối chiếu với JUnit XML; ảnh thể hiện trạng thái cuối, không thay thế toàn bộ log kiểm thử.
+
+**TC01 – Đăng nhập hợp lệ: Passed. Trang Products hiển thị sau đăng nhập.**
+
+![Minh chứng TC01](evidence/test_TC01_login_valid-passed.png)
+
+**TC02 – Sai mật khẩu: Passed. Website hiển thị thông báo không khớp tài khoản/mật khẩu.**
+
+![Minh chứng TC02](evidence/test_TC02_login_wrong_password-passed.png)
+
+**TC03 – Tài khoản bị khóa: Passed. Website hiển thị thông báo tài khoản bị khóa.**
+
+![Minh chứng TC03](evidence/test_TC03_login_locked_user-passed.png)
+
+**TC04 – Bỏ trống username: Passed. Website yêu cầu nhập username.**
+
+![Minh chứng TC04](evidence/test_TC04_login_empty_username-passed.png)
+
+**TC05 – Thêm vào giỏ: Passed. Giỏ hàng có Sauce Labs Backpack với số lượng 1.**
+
+![Minh chứng TC05](evidence/test_TC05_add_to_cart-passed.png)
+
+**TC06 – Xóa khỏi giỏ: Failed. Sau thao tác Remove và thời gian chờ, ảnh vẫn hiển thị Backpack và badge 1.**
+
+![Minh chứng TC06](evidence/test_TC06_remove_from_cart-failed.png)
+
+**TC07 – Sắp xếp giá tăng: Passed. Các sản phẩm được hiển thị theo giá tăng dần.**
+
+![Minh chứng TC07](evidence/test_TC07_sort_price_ascending-passed.png)
+
+**TC08 – Đăng xuất: Failed. Sau thao tác Logout và thời gian chờ, ảnh vẫn hiển thị trang sản phẩm cùng menu.**
+
+![Minh chứng TC08](evidence/test_TC08_logout-failed.png)
 
 ## 8. Chạy trên GitHub Actions
 
